@@ -12,6 +12,14 @@ fn main() {
     let condition = true;
     let num = if condition { 13 } else { 10 };
     print_number("the value of num", num);
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    print_number("The result is", result);
 }
 fn print_number(s: &str, x: i32) {
     println!("{} {}", s, x);
