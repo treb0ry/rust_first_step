@@ -20,6 +20,12 @@ fn main() {
         }
     };
     print_number("The result is", result);
+    let mut number = 3;
+    while number != 0 {
+        println!("{}!", number);
+        number -= 1;
+    }
+    println!("DONE WHILE");
 }
 fn print_number(s: &str, x: i32) {
     println!("{} {}", s, x);
