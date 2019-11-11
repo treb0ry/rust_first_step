@@ -26,7 +26,28 @@ fn main() {
         number -= 1;
     }
     println!("DONE WHILE");
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+    while index < 5 {
+        print_number("The value is", a[index]);
+        index += 1;
+    }
+    for element in a.iter() {
+        println!("value is: {}", element)
+    }
+    for element in (1..4).rev() {
+        println!("{}!", element);
+    }
+    let f = fib(6);
+    print_number("Fib 5:", f)
 }
 fn print_number(s: &str, x: i32) {
     println!("{} {}", s, x);
+}
+fn fib(x: i32) -> i32 {
+    if x <= 1 {
+        1
+    } else {
+        fib(x - 1) + fib(x - 2)
+    }
 }
