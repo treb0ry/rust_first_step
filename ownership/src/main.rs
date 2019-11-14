@@ -17,8 +17,19 @@ fn main() {
     println!("{}", str3);
     let (str4, len) = calculate_length(str3);
     println!("{} length: {}", str4, len);
+    let len_ref=calculate_length_ref(&str4);
+    println!("{}",len_ref);
+    let mut str5=String::from("i'm mut");
+    {
+        let r1=&mut str5;
+        println!("r1: {}",r1);
+    }
+    change_str(&mut str5);
+    println!("{}",str5);
 }
-
+fn change_str(s:&mut String){
+    s.push_str(" cahage from function");
+}
 fn takes_ownerchip(some_string: String) {
     println!("{}", some_string);
 }
@@ -37,4 +48,8 @@ fn takes_and_gives_back(a_string: String) -> String {
 fn calculate_length(s: String) -> (String, usize) {
     let length = s.len();
     (s, length)
+}
+
+fn calculate_length_ref(s:&String)->usize{
+    s.len()
 }
